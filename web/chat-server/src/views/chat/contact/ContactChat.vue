@@ -2097,6 +2097,10 @@ export default {
       }
       createRtcPeerConnection();
       data.localStream = await getLocalMediaStream();
+      if (!data.localStream) {
+        ElMessage.error("无法获取摄像头/麦克风，请检查：1. 是否使用 HTTPS 或 localhost 访问 2. 是否授权了摄像头和麦克风权限");
+        return;
+      }
       attachMediaStreamToLocalVideo();
       attachMediaStreamToPeerConnection();
       if (isInitiator) {
