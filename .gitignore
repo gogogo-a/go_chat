@@ -41,3 +41,4 @@ internal/service/kafka/start.bat
 /test
 *.toml
 .DS_Store
+**/.DS_Store
